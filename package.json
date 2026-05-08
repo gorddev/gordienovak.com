@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "tsc && vite",
+    "build": "tsc && vite build && vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.0.4",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
+  }
+}

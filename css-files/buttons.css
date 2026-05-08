@@ -1,0 +1,56 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.4em;
+}
+
+.project-interact-button {
+    color: var(--text);
+    border: 0.2em solid;
+    border-radius: 1.4em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin-left: 0.4em;
+    padding: 0.5em;
+    width: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    transition:
+        background 0.15s ease,
+        scale 0.15s ease;
+}
+
+.play-button {
+    border-color: color-mix(in srgb, var(--bg_green), rgb(255, 255, 255));
+    background: var(--bg_green);
+}
+.play-button:hover,
+.play-button:focus-visible {
+    background: color-mix(in srgb, var(--bg_green), white 30%);
+    scale: 1.1;
+}
+
+.use-button {
+    border-color: color-mix(in srgb, var(--bg_blue), rgb(240, 240, 240));
+    background: var(--bg_blue);
+}
+.use-button:hover,
+.use-button:focus-visible {
+    background: color-mix(in srgb, var(--bg_blue), white 30%);
+    scale: 1.1;
+}
+
+.github-button {
+    border-color: color-mix(in srgb, var(--bg_purple), rgb(240, 240, 240));
+    background: var(--bg_purple);
+    height: 2lh;
+}
+
+.github-button:hover,
+.github-button:focus-visible {
+    background: color-mix(in srgb, var(--bg_purple), white 30%);
+    scale: 1.1;
+}

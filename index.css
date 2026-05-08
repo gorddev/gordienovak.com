@@ -1,0 +1,40 @@
+@import "/css-files/wave.css";
+@import "/css-files/gordie.css";
+@import "/css-files/projects.css";
+@import "/css-files/buttons.css";
+
+:root {
+    --bg: #ffffff;
+    --text: #2e2e2e;
+    --card: rgba(0, 0, 0, 0.05);
+    --accent: darkslateblue;
+
+    --bg_green: mediumseagreen;
+    --bg_blue: lightsteelblue;
+    --bg_purple: color-mix(in srgb, mediumpurple, rgb(190, 170, 190));
+}
+
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    color: #252e27;
+    padding: 0.1em;
+    padding-left: 1em;
+    font-size: 1.3rem;
+    caret-color: transparent;
+    background: var(--bg);
+    color: var(--text);
+    transition:
+        background 0.5s ease,
+        color 0.5s ease;
+}
+
+body.dark {
+    --bg: #202020;
+    --text: #eaeaea;
+    --card: rgba(255, 255, 255, 0.1);
+    --accent: #9aa4ff;
+
+    --bg_green: seagreen;
+    --bg_blue: color-mix(in srgb, steelblue, rgb(180, 180, 180));
+    --bg_purple: color-mix(in srgb, mediumpurple, rgb(120, 120, 120));
+}

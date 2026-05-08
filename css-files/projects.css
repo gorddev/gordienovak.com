@@ -1,0 +1,73 @@
+.project-button {
+    all: unset;
+    display: inline-block;
+    width: 220px;
+
+    text-decoration: none;
+    color: inherit;
+
+    border-radius: 0.8em;
+    overflow: hidden;
+
+    background: var(--card);
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.1);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.project-button:focus-visible {
+    outline: 2px solid #4c9ffe;
+    outline-offset: 3px;
+}
+
+.project-button:focus-visible,
+.project-button:hover {
+    transform: translateY(-0.3em) scale(1.02);
+    box-shadow: 0 0.6em 1.2em rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-content {
+    padding: 0.5em;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
+.project-brief {
+    font-size: 1rem;
+    opacity: 0.8;
+    line-height: 1.3;
+    transition:
+        opacity 5s ease,
+        transform 0.3s ease,
+        height 0.3s ease;
+}
+
+.project-desc {
+    font-size: 1.4rem;
+    opacity: 1;
+    line-height: 1.3;
+    transition:
+        opacity 5s ease,
+        transform 0.3s ease,
+        height 0.3s ease;
+}

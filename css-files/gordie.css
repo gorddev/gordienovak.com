@@ -1,0 +1,33 @@
+.gordie {
+    font-weight: bold;
+    color: var(--accent);
+    transition: font-size 0.2s ease;
+}
+
+.gordie:hover {
+    font-size: 1.1em;
+}
+
+.tooltip {
+    opacity: 0;
+    color: black;
+    font-weight: normal;
+    background-color: rgb(240, 240, 240, 255);
+    backdrop-filter: blur(10px);
+    border: solid darkgray;
+    border-radius: 0.2em;
+    padding: 0.25em;
+    transform: translate(0em, -0.5em);
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    pointer-events: none;
+    position: absolute;
+}
+
+.gordie:focus-visible .tooltip,
+.gordie:hover .tooltip {
+    opacity: 1;
+    transform: translate(0.5em, -0.5em);
+    pointer-events: auto;
+}
