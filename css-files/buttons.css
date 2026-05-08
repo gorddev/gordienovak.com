@@ -46,7 +46,6 @@
 .github-button {
     border-color: color-mix(in srgb, var(--bg_purple), rgb(240, 240, 240));
     background: var(--bg_purple);
-    height: 2lh;
 }
 
 .github-button:hover,

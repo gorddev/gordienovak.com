@@ -5,7 +5,8 @@ export default class PlayButton implements ButtonInterface {
     this._button = document.createElement("button");
     this._button.textContent = "Play";
     this._button.classList.add("project-interact-button", "play-button");
-    this._button.onclick = () => {
+    this._button.onclick = (e) => {
+      e.stopPropagation();
       window.location.href = link;
     };
   }

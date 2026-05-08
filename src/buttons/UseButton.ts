@@ -5,7 +5,8 @@ export default class UseButton implements ButtonInterface {
     this._button = document.createElement("button");
     this._button.textContent = "Use";
     this._button.classList.add("project-interact-button", "use-button");
-    this._button.onclick = () => {
+    this._button.onclick = (e) => {
+      e.stopPropagation();
       window.location.href = link;
     };
   }

@@ -2,6 +2,7 @@
 @import "/css-files/gordie.css";
 @import "/css-files/projects.css";
 @import "/css-files/buttons.css";
+@import "/css-files/project-desc.css";
 
 :root {
     --bg: #ffffff;

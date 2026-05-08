@@ -29,11 +29,11 @@ export default class Project {
       ...ProjDefaults,
       ...p_args,
     };
-    this._root = document.createElement("button");
+    this._root = document.createElement("div");
     this._image = document.createElement("img");
     this._content = document.createElement("div");
     this._title = document.createElement("div");
-    this._desc = document.createElement("div");
+    this._brief = document.createElement("div");
     this._buttons = document.createElement("div");
 
     // Apply classes to each of our elements
@@ -43,15 +43,21 @@ export default class Project {
       x.appendAsChildOf(this._buttons);
     }
 
-    this._root.onclick = () => {
-      let p_desc = document.getElementById("projects-desc");
-      if (!p_desc) return;
-      p_desc.replaceChildren();
-      let n_desc = new ProjectDesc(this._HTMLDesc);
-      n_desc.appendAsChild(p_desc);
+    this._root.addEventListener("mouseover", () => {
+      ProjectDesc.toggleProjecDesc(this._HTMLDesc, this._root);
+    });
+    this._root.addEventListener("mouseleave", () => {
+      ProjectDesc.removeProjectDesc(this._root);
+    });
+
+    this._root.onclick = (e) => {
+      let target = e.target as HTMLElement;
+      if (target.closest("button")) return;
+      ProjectDesc.pin(this._HTMLDesc, this._root);
     };
+
     this._title.textContent = args.title;
-    this._desc.textContent = args.brief;
+    this._brief.textContent = args.brief;
     this._image.src = args.img;
     this._image.alt = args.img_alt;
     this._HTMLDesc = args.HTMLDesc;
@@ -60,7 +66,7 @@ export default class Project {
 
     // CONTENT
     this._content.appendChild(this._title);
-    this._content.appendChild(this._desc);
+    this._content.appendChild(this._brief);
     this._content.appendChild(this._buttons);
 
     // _root
@@ -71,11 +77,11 @@ export default class Project {
   }
 
   private applyClasses() {
-    this._root.className = "project-button";
+    this._root.className = "project-card";
     this._image.className = "project-image";
     this._content.className = "project-content";
     this._title.className = "project-title";
-    this._desc.className = "project-brief";
+    this._brief.className = "project-brief";
     this._buttons.className = "button-container";
   }
 
@@ -88,10 +94,10 @@ export default class Project {
   }
 
   private _HTMLDesc: string;
-  private _root: HTMLButtonElement;
+  private _root: HTMLDivElement;
   private _image: HTMLImageElement;
   private _content: HTMLDivElement;
   private _title: HTMLDivElement;
-  private _desc: HTMLDivElement;
+  private _brief: HTMLDivElement;
   private _buttons: HTMLDivElement;
 }

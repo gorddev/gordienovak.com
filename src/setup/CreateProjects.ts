@@ -1,7 +1,8 @@
-import Project from "@/projects/Project";
-import UseButton from "@/buttons/UseButton";
-import GithubButton from "@/buttons/GithubButton";
-import PlayButton from "@/buttons/PlayButton";
+import Project from "/src/projects/Project";
+import ProjectDesc from "/src/projects/ProjectDesc";
+import UseButton from "/src/buttons/UseButton";
+import GithubButton from "/src/buttons/GithubButton";
+import PlayButton from "/src/buttons/PlayButton";
 
 //@ts-ignore
 import FractalVisualizerHTML from "/src/projects/project-htmls/Fractal_Visualizer.html?raw";
@@ -42,13 +43,16 @@ export default function CreateProjects(): void {
 
   let thisWebsite: Project = new Project({
     link: "projects/goblin-cleanup/Goblin-Cleanup.html",
-    title: "Goblin Cleanup",
+    title: "gordienovak.com",
     brief:
-      "Quick SDL2 -> Emscripten project where you click on the goblins to kill them.",
+      "This website! Built with Vite, Typescript, and Raw HTML with a hybrid OOP approach.",
     img: "gordienovak.png",
-    img_alt: "Image of the Goblin Cleanup Game",
+    img_alt: "Image just saying `gordienovak.com`",
     HTMLDesc: "<p>It's just this website lol.</p>",
     buttons: [new GithubButton("https://github.com/gorddev/gordienovak.com")],
   });
-  goblinCleanup.appendAsChild(projects);
+  thisWebsite.appendAsChild(projects);
+
+  // Add the project descriptions
+  ProjectDesc.init("my description");
 }
