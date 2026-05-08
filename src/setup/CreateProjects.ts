@@ -13,7 +13,8 @@ export default function CreateProjects(): void {
   let projects = document.getElementById("projects");
   if (!projects) throw "projects div not found!";
 
-  let FractalVisualizer = new Project({
+  // Fractal VISUALIZER
+  new Project({
     link: "projects/fractal-visualizer/Fractal_Visualizer.html",
     title: "Fractal Visualizer",
     brief:
@@ -25,13 +26,11 @@ export default function CreateProjects(): void {
     buttons: [
       new UseButton("/projects/fractal-visualizer/Fractal_Visualizer.html"),
       new GithubButton("https://github.com/gorddev/Complex-Final-Project"),
-      new PlayButton("/projects/fractal-visualizer/Fractal_Visualizer.html"),
-      new PlayButton("/projects/fractal-visualizer/Fractal_Visualizer.html"),
     ],
-  });
-  FractalVisualizer.appendAsChild(projects);
+  }).appendAsChild(projects);
 
-  let goblinCleanup: Project = new Project({
+  // GOBLIN
+  new Project({
     link: "projects/goblin-cleanup/Goblin-Cleanup.html",
     title: "Goblin Cleanup",
     brief:
@@ -40,10 +39,10 @@ export default function CreateProjects(): void {
     img_alt: "Image of the Goblin Cleanup Game",
     HTMLDesc: goblinCleanupHTML,
     buttons: [new PlayButton("/projects/goblin-cleanup/Goblin-Cleanup.html")],
-  });
-  goblinCleanup.appendAsChild(projects);
+  }).appendAsChild(projects);
 
-  let thisWebsite: Project = new Project({
+  // THIS WEBSITE
+  new Project({
     link: "projects/goblin-cleanup/Goblin-Cleanup.html",
     title: "gordienovak.com",
     brief:
@@ -52,8 +51,7 @@ export default function CreateProjects(): void {
     img_alt: "Image just saying `gordienovak.com`",
     HTMLDesc: "<p>It's just this website lol.</p>",
     buttons: [new GithubButton("https://github.com/gorddev/gordienovak.com")],
-  });
-  thisWebsite.appendAsChild(projects);
+  }).appendAsChild(projects);
 
   // Add the project descriptions
   ProjectDesc.init("my description");

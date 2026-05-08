@@ -12,8 +12,6 @@ export default class GithubButton implements ButtonInterface {
     this._img.src = "https://github.githubassets.com/favicons/favicon.svg";
     this._root.classList.add("project-interact-button", "github-button");
     this._root.addEventListener("mousedown", (e) => {
-      e.stopPropagation();
-      e.stopImmediatePropagation();
       window.location.href = link;
     });
 

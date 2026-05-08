@@ -49,12 +49,20 @@ export default class Project {
     this._root.addEventListener("mouseleave", () => {
       ProjectDesc.removeProjectDesc(this._root);
     });
+    this._root.addEventListener("focusin", () => {
+      ProjectDesc.toggleProjecDesc(this._HTMLDesc, this._root);
+    });
+    this._root.addEventListener("focusout", () => {
+      ProjectDesc.removeProjectDesc(this._root);
+    });
 
     this._root.onclick = (e) => {
       let target = e.target as HTMLElement;
       if (target.closest("button")) return;
       ProjectDesc.pin(this._HTMLDesc, this._root);
     };
+
+    this._root.tabIndex = 0;
 
     this._title.textContent = args.title;
     this._brief.textContent = args.brief;
