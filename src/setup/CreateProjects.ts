@@ -25,6 +25,8 @@ export default function CreateProjects(): void {
     buttons: [
       new UseButton("/projects/fractal-visualizer/Fractal_Visualizer.html"),
       new GithubButton("https://github.com/gorddev/Complex-Final-Project"),
+      new PlayButton("/projects/fractal-visualizer/Fractal_Visualizer.html"),
+      new PlayButton("/projects/fractal-visualizer/Fractal_Visualizer.html"),
     ],
   });
   FractalVisualizer.appendAsChild(projects);
