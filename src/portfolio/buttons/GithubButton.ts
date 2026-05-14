@@ -23,6 +23,12 @@ export default class GithubButton implements ButtonInterface {
     this._root.appendChild(this._text);
   }
 
+  clone(): ButtonInterface {
+    let newGuy = new GithubButton("null");
+    newGuy._img.src = this._img.src;
+    return newGuy;
+  }
+
   appendAsChildOf(element: HTMLElement): void {
     element.appendChild(this._root);
   }

@@ -1,0 +1,166 @@
+.libraries-sidebar {
+    flex: 1 1 30%;
+    min-width: 250px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    scrollbar-width: thin;
+    scrollbar-color: var(--brand-green-alt) transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.libraries-sidebar h2 {
+    color: var(--brand-green);
+    gap: 10px;
+    padding: 0.15em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    width: fit-content;
+    background-color: var(--brand-mint);
+    border: solid 3px var(--brand-green-light);
+    border-radius: 20px;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.libraries-sidebar .lib-tag {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    padding: 1.1em;
+    margin-left: 1.1em;
+    background: color-mix(in srgb, var(--bg) 65%, transparent);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-standard);
+    transition:
+        transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1),
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+    cursor: pointer;
+    margin-bottom: 0.8em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.libraries-sidebar .lib-tag:last-child {
+    margin-bottom: 0;
+}
+
+.libraries-sidebar .lib-tag:hover,
+.libraries-sidebar .lib-tag:focus-within {
+    transform: translateX(4px);
+    border-color: var(--brand-green-alt);
+    background: var(--brand-mint);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body.dark .libraries-sidebar .lib-tag:hover,
+body.dark .libraries-sidebar .lib-tag:focus-within {
+    background: rgba(50, 175, 91, 0.08);
+}
+
+.lib-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.lib-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.lib-card-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--brand-green);
+    stroke-width: 2.25;
+    transition:
+        stroke 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lib-tag:hover .lib-card-icon svg {
+    stroke: var(--brand-green-alt);
+    transform: scale(1.1);
+}
+
+/* Card Title Typography */
+.lib-card-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    white-space: normal;
+}
+
+.lib-card-brief {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: var(--subtext);
+    white-space: normal;
+}
+
+.lib-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0.4em;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.lib-card-date {
+    color: var(--text-muted);
+}
+
+.lib-card-languages {
+    font-family: monospace;
+    background: var(--brand-green-light);
+    color: var(--text-dark);
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: -0.02em;
+}
+
+body.dark .lib-card-languages {
+    background: rgba(50, 175, 91, 0.2);
+    color: var(--brand-green-light);
+}
+
+.lib-card-link {
+    all: unset;
+    margin-left: auto;
+    color: var(--brand-blue-alt);
+    text-decoration: none;
+    transition:
+        color 0.2s ease,
+        text-decoration 0.2s ease;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.lib-card-link:hover {
+    color: var(--brand-blue);
+    text-decoration: underline;
+}
+
+body.dark .lib-card-link {
+    color: var(--brand-blue);
+}
+
+body.dark .lib-card-link:hover {
+    color: var(--brand-blue-alt);
+}
+
+/* Accessability Structural Outline Safety */
+.libraries-sidebar .lib-tag:focus-visible {
+    outline: 2px solid var(--brand-green-alt);
+    outline-offset: 2px;
+}

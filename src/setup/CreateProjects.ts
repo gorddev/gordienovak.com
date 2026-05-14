@@ -1,58 +1,28 @@
-import Project from "/src/projects/Project";
-import ProjectDesc from "/src/projects/ProjectDesc";
-import UseButton from "/src/buttons/UseButton";
-import GithubButton from "/src/buttons/GithubButton";
-import PlayButton from "/src/buttons/PlayButton";
-
-//@ts-ignore
-import FractalVisualizerHTML from "/src/projects/project-htmls/Fractal_Visualizer.html?raw";
-//@ts-ignore
-import goblinCleanupHTML from "/src/projects/project-htmls/Goblin-Cleanup.html?raw";
+import { projects } from "/src/setup/data/ProjectData";
+import ProjectCard from "../portfolio/projects/ProjectCard";
+import Spotlight from "../portfolio/projects/Spotlight";
 
 export default function CreateProjects(): void {
-  let projects = document.getElementById("projects");
-  if (!projects) throw "projects div not found!";
-
-  // Fractal VISUALIZER
-  new Project({
-    link: "projects/fractal-visualizer/Fractal_Visualizer.html",
-    title: "Fractal Visualizer",
-    brief:
-      "Fractal Visualization software build for St. Olaf Complex Analysis Class",
-    img: "fractal-visualizer.png",
-    img_alt:
-      "Image of a fractal rendered with the Fractal Visualizer software.",
-    HTMLDesc: FractalVisualizerHTML,
-    buttons: [
-      new UseButton("/projects/fractal-visualizer/Fractal_Visualizer.html"),
-      new GithubButton("https://github.com/gorddev/Complex-Final-Project"),
-    ],
-  }).appendAsChild(projects);
+  let projects_div = document.getElementById("projects");
+  let spotlight_div = document.getElementById("spotlight");
+  if (!projects_div) throw "projects div not found!";
+  if (!spotlight_div) throw "spotlight div not found!";
 
   // GOBLIN
-  new Project({
-    link: "projects/goblin-cleanup/Goblin-Cleanup.html",
-    title: "Goblin Cleanup",
-    brief:
-      "Quick SDL2 -> Emscripten project where you click on the goblins to kill them.",
-    img: "goblin-cleanup.png",
-    img_alt: "Image of the Goblin Cleanup Game",
-    HTMLDesc: goblinCleanupHTML,
-    buttons: [new PlayButton("/projects/goblin-cleanup/Goblin-Cleanup.html")],
-  }).appendAsChild(projects);
+  new ProjectCard(projects.Goblin_Cleanup).appendAsChild(projects_div);
 
   // THIS WEBSITE
-  new Project({
-    link: "projects/goblin-cleanup/Goblin-Cleanup.html",
-    title: "gordienovak.com",
-    brief:
-      "This website! Built with Vite, Typescript, and Raw HTML with a hybrid OOP approach.",
-    img: "gordienovak.png",
-    img_alt: "Image just saying `gordienovak.com`",
-    HTMLDesc: "<p>It's just this website lol.</p>",
-    buttons: [new GithubButton("https://github.com/gorddev/gordienovak.com")],
-  }).appendAsChild(projects);
+  new ProjectCard(projects.gordienovak_com).appendAsChild(projects_div);
 
-  // Add the project descriptions
-  ProjectDesc.init("my description");
+  // Everesting Simulation
+  new ProjectCard(projects.everesting).appendAsChild(projects_div);
+
+  // Mini Platformer
+  new ProjectCard(projects.mini_platformer).appendAsChild(projects_div);
+
+  // Fractal VISUALIZER
+  new ProjectCard(projects.Fractal_Visualizer).appendAsChild(projects_div);
+  new Spotlight(projects.Fractal_Visualizer).appendAsChild(spotlight_div);
+
+  //www.glowscript.org/#/user/novak/folder/Individual/program/FullLevelAttempt
 }

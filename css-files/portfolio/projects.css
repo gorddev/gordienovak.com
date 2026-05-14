@@ -1,0 +1,110 @@
+.projects-panel {
+    flex: 2 1 65%;
+    min-width: 320px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    padding: 1em 1em;
+    padding-bottom: 2em;
+    margin: 0;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--brand-green-alt) transparent;
+}
+
+.project-card {
+    all: unset;
+    display: inline-flex;
+    flex-direction: column;
+    width: 250px;
+    white-space: normal;
+    text-decoration: none;
+    color: inherit;
+    border-radius: var(--radius-standard);
+    overflow: hidden;
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+    margin-right: 1.2em;
+    cursor: pointer;
+}
+
+.project-card.selected {
+    border-color: var(--brand-green);
+    background-color: var(--brand-mint);
+    box-shadow: 0 0 0 3px var(--brand-green-light);
+    transform: scale(1.03);
+}
+
+body.dark .project-card.selected {
+    background-color: rgba(50, 175, 91, 0.15);
+    box-shadow: 0 0 0 3px rgba(50, 175, 91, 0.3);
+}
+
+.project-card:focus-visible {
+    outline: 3px solid var(--brand-green-alt);
+    outline-offset: 4px;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--brand-green-alt);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    background: color-mix(in srgb, var(--card) 95%, var(--brand-green-light));
+}
+
+body.dark .project-card:hover {
+    background: color-mix(in srgb, var(--card) 92%, var(--brand-green));
+}
+
+.project-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--border);
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.04);
+}
+
+.project-content {
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    min-height: 10.5rem;
+}
+
+.project-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.project-brief {
+    font-size: 0.95rem;
+    color: var(--subtext);
+    line-height: 1.45;
+}
+
+.button-container {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+    padding-top: 0.5em;
+}

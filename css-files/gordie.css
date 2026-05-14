@@ -1,6 +1,6 @@
 .gordie {
     font-weight: bold;
-    color: var(--accent);
+    color: var(--text);
     transition: font-size 0.2s ease;
 }
 

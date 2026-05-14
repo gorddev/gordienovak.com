@@ -6,10 +6,10 @@
 }
 
 .project-interact-button {
-    font-size: 0.7em;
+    font-size: var(--p-font-size);
     color: var(--text);
-    border: 0.2em solid;
-    border-radius: 1.4em;
+    border: 0.15em solid;
+    border-radius: 1.2em;
     font-weight: bold;
     transition: color 0.3s ease;
     margin: 0.2em;
@@ -27,32 +27,32 @@
 }
 
 .play-button {
-    border-color: color-mix(in srgb, var(--bg_green), rgb(255, 255, 255));
-    background: var(--bg_green);
+    border-color: color-mix(in srgb, var(--brand-green), rgb(255, 255, 255));
+    background: var(--brand-green-light);
 }
 .play-button:hover,
 .play-button:focus-visible {
-    background: color-mix(in srgb, var(--bg_green), white 30%);
+    background: color-mix(in srgb, var(--brand-green-light), white 30%);
     scale: 1.1;
 }
 
 .use-button {
-    border-color: color-mix(in srgb, var(--bg_blue), rgb(240, 240, 240));
-    background: var(--bg_blue);
+    border-color: color-mix(in srgb, var(--brand-blue-alt), rgb(240, 240, 240));
+    background: var(--brand-blue-light);
 }
 .use-button:hover,
 .use-button:focus-visible {
-    background: color-mix(in srgb, var(--bg_blue), white 30%);
+    background: color-mix(in srgb, var(--brand-blue-light), white 30%);
     scale: 1.1;
 }
 
 .github-button {
-    border-color: color-mix(in srgb, var(--bg_purple), rgb(240, 240, 240));
-    background: var(--bg_purple);
+    background: color-mix(in srgb, var(--brand-purple-light) 80%, var(--bg));
+    border-color: var(--brand-purple-alt);
 }
 
 .github-button:hover,
 .github-button:focus-visible {
-    background: color-mix(in srgb, var(--bg_purple), white 30%);
+    background: color-mix(in srgb, var(--brand-purple-light), white 30%);
     scale: 1.1;
 }

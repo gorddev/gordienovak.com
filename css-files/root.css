@@ -1,0 +1,163 @@
+:root {
+    --bg: #ffffff;
+    --text: #313131;
+    --subtext: #565656;
+    --card: #e3e3e3;
+    --border: #5f5f5f;
+
+    --text-dark: #1b2620;
+    --text-muted: #5c6b62;
+    --brand-orange: #ff6b35;
+    --brand-green: #226f4b;
+    --brand-green-alt: #32af5b;
+    --brand-green-light: #b8d5b9;
+    --brand-mint: #e8f5e9;
+
+    --brand-blue: #1d4ed8;
+    --brand-blue-alt: #5ba2f6;
+    --brand-blue-light: #b3e5fd;
+    --brand-blue-tint: #eff6ff;
+
+    --brand-purple: #6d28d9;
+    --brand-purple-alt: #8b5cf6;
+    --brand-purple-light: #c084fc;
+    --brand-purple-tint: #f5f3ff;
+
+    --brand-brown: #78350f;
+    --brand-brown-alt: #b45309;
+    --brand-brown-light: #f59e0b;
+    --brand-brown-tint: #fffbeb;
+
+    --radius-playful: 24px;
+    --radius-standard: 12px;
+
+    --h1-size: 3.5rem;
+    --h2-size: 2.5rem;
+    --h3-size: 2rem;
+    --h4-size: 1.75rem;
+    --p-font-size: 1rem;
+    --superscript-size: 0.8rem;
+
+    --site-font: "Trebuchet MS", sans-serif;
+
+    transition:
+        background 0.5s ease,
+        color 0.5s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: var(--h1-size);
+}
+h2 {
+    font-size: var(--h2-size);
+}
+h3 {
+    font-size: var(--h3-size);
+}
+h4 {
+    font-size: var(--h4-size);
+}
+p {
+    font-size: var(--p-font-size);
+}
+button {
+    font-family: var(--site-font);
+}
+
+body {
+    color: var(--text);
+    background: var(--bg);
+
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+
+    font-size: var(--p-font-size);
+
+    caret-color: transparent;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+
+    font-family: var(--site-font);
+}
+
+body.dark {
+    --bg: #202020;
+    --text: #eaeaea;
+    --subtext: #cacaca;
+    --card: rgba(255, 255, 255, 0.1);
+    --accent: #9aa4ff;
+    --border: #4f4f4f;
+
+    --text-dark: #1b2620;
+    --text-muted: #5c6b62;
+    --brand-orange: #ff6b35;
+    --brand-green: #32af5b;
+    --brand-green-alt: #226f4b;
+    --brand-green-light: #124f3b;
+    --brand-mint: #124f3b;
+    --accent-peach: #fff0ea;
+
+    --brand-blue: #60a5fa;
+    --brand-blue-alt: #2563eb;
+    --brand-blue-light: #1e3a8a;
+    --brand-blue-tint: #0f172a;
+
+    --brand-purple: #a78bfa;
+    --brand-purple-alt: #7c3aed;
+    --brand-purple-light: #4c1d95;
+    --brand-purple-tint: #1e1b4b;
+
+    --brand-brown: #fbbf24;
+    --brand-brown-alt: #d97706;
+    --brand-brown-light: #92400e;
+    --brand-brown-tint: #451a03;
+}
+
+.gcolor1 {
+    color: var(--brand-green);
+}
+
+.smaller {
+    font-size: var(--p-font-size);
+}
+
+@media (max-width: 600px) {
+    :root {
+        --h1-size: 2.75rem;
+        --h2-size: 2rem;
+        --h3-size: 1.5rem;
+        --h4-size: 1.35rem;
+        --p-font-size: 0.9rem;
+        --superscript-size: 0.6rem;
+    }
+}
+
+.abstract-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.abstract-bg path {
+    transition: fill 0.5s ease;
+}
+
+/* Adjust transparency values dynamically to maintain legibility across light & dark switches */
+body.dark .abstract-bg path {
+    mix-blend-mode: plus-lighter;
+}

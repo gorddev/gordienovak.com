@@ -1,0 +1,173 @@
+#spotlight {
+    flex: 1.2;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.spotlight {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.spotlight-tag {
+    font-family: monospace;
+    font-size: var(--h3-size);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    color: var(--brand-green);
+    opacity: 0.85;
+    margin-left: 3px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.spotlight-badge {
+    border: solid 3px;
+    border-color: var(--brand-green-light);
+
+    background: color-mix(in srgb, var(--bg) 40%, rgba(0, 0, 0, 0));
+    backdrop-filter: blur(5px);
+
+    color: var(--brand-green);
+    font-size: var(--h3-size);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    width: fit-content;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.project-spotlight {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 3px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+
+    background: linear-gradient(
+        -45deg,
+        color-mix(in srgb, var(--brand-brown) 35%, var(--bg)),
+        color-mix(in srgb, var(--brand-green) 15%, var(--bg)),
+        color-mix(in srgb, var(--brand-brown) 15%, var(--bg)),
+        color-mix(in srgb, var(--brand-green-alt) 15%, var(--bg)),
+        color-mix(in srgb, var(--brand-brown) 25%, var(--bg)),
+        color-mix(in srgb, var(--brand-green) 15%, var(--bg)),
+        color-mix(in srgb, var(--brand-brown) 45%, var(--bg))
+    );
+    background-size: 400% 400%;
+    background-blend-mode: overlay;
+    animation: gradientBG 8s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.project-spotlight:hover,
+.project-spotlight:focus-within {
+    transform: translateY(-2px) scale(1.01);
+    border-color: var(--brand-green);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.spotlight-image {
+    width: 40%;
+    max-height: 220px;
+    object-fit: cover;
+    border: 3px double var(--border);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.spotlight-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    gap: 12px;
+}
+
+.spotlight-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    padding-right: 20px;
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.spotlight-brief {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.spotlight-detail {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--subtext);
+}
+
+.spotlight-languages {
+    align-self: flex-start;
+    font-family: monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: color-mix(in srgb, var(--bg) 50%, rgba(0, 0, 0, 0));
+    backdrop-filter: blur(10px);
+    color: var(--accent-color);
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+@media (max-width: 600px) {
+    .project-spotlight {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .spotlight-image,
+    .spotlight-content {
+        width: 100%;
+    }
+}
