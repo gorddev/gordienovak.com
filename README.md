@@ -2,7 +2,7 @@
 
 This is my personal website projects to host my projects, resume, and other things I find interesting.
 
-It's currently hosted at [gordienovak.com](gordienovak.com) (believe it or not).
+It's currently hosted at [gordienovak.com](https://gordienovak.com) (believe it or not).
 
 ## Languages & Tools
 
